@@ -4,7 +4,11 @@ import dayjs from 'dayjs'
 import { InvalidTripStartDateError } from '@/use-cases/errors/invalid-trip-start-date-error'
 import { InvalidTripEndDateError } from '@/use-cases/errors/invalid-trip-end-date-error'
 
-type CreateTripUseCaseRequest = CreateTrip
+type CreateTripUseCaseRequest = CreateTrip & {
+  ownerName: string
+  ownerEmail: string
+  emailsToInvite: string[]
+}
 
 type CreateTripUseCaseResponse = {
   tripId: string

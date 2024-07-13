@@ -17,6 +17,9 @@ describe('Create trip (e2e)', () => {
       destination: 'Paris',
       startsAt: dayjs().add(1, 'day').toDate(),
       endsAt: dayjs().add(2, 'days').toDate(),
+      ownerName: 'John Doe',
+      ownerEmail: 'johndoe@email.com',
+      emailsToInvite: ['example@email.com'],
     }
 
     const response = await request(app.server).post('/trips').send(body)
@@ -29,6 +32,9 @@ describe('Create trip (e2e)', () => {
       destination: 'Paris',
       startsAt: dayjs().subtract(1, 'day').toDate(),
       endsAt: dayjs().add(2, 'days').toDate(),
+      ownerName: 'John Doe',
+      ownerEmail: 'johndoe@email.com',
+      emailsToInvite: ['example@email.com'],
     }
 
     const response = await request(app.server).post('/trips').send(body)
@@ -41,6 +47,9 @@ describe('Create trip (e2e)', () => {
       destination: 'Paris',
       startsAt: dayjs().subtract(1, 'day').toDate(),
       endsAt: dayjs().add(2, 'days').toDate(),
+      ownerName: 'John Doe',
+      ownerEmail: 'johndoe@email.com',
+      emailsToInvite: ['example@email.com'],
     }
 
     const response = await request(app.server).post('/trips').send(body)

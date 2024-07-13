@@ -15,6 +15,13 @@
       "when": 1720560251660,
       "tag": "0001_dashing_morph",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1720723514771,
+      "tag": "0002_cultured_warbird",
+      "breakpoints": true
     }
   ]
 }

@@ -9,6 +9,9 @@ export async function create(request: FastifyRequest, reply: FastifyReply) {
     destination: z.string().min(4),
     startsAt: z.coerce.date(),
     endsAt: z.coerce.date(),
+    ownerName: z.string(),
+    ownerEmail: z.string().email(),
+    emailsToInvite: z.array(z.string().email()),
   })
 
   const body = bodySchema.parse(request.body)
@@ -17,6 +20,8 @@ export async function create(request: FastifyRequest, reply: FastifyReply) {
     const createGymUseCase = makeCreateTripUseCase()
 
     const { tripId } = await createGymUseCase.execute(body)
+
+    // TODO: Send email to confirm the trip
 
     reply.status(201).send({ tripId })
   } catch (err) {
